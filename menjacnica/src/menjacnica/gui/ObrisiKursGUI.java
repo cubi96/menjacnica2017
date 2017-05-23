@@ -1,8 +1,5 @@
 package menjacnica.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -24,6 +21,10 @@ import java.awt.Toolkit;
 
 public class ObrisiKursGUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5682212428854242976L;
 	private JPanel contentPane;
 	private JLabel lblSifra;
 	private JLabel lblNaziv;
@@ -228,9 +229,9 @@ public class ObrisiKursGUI extends JFrame {
 
 	private void obrisiValutu() {
 		try{
-			glavniProzor.sistem.obrisiValutu(valuta);
+			GUIKontrolor.sistem.obrisiValutu(valuta);
 			
-			glavniProzor.prikaziSveValute();
+			GUIKontrolor.prikaziSveValute();
 			dispose();
 		} catch (Exception e1) {
 			JOptionPane.showMessageDialog(contentPane, e1.getMessage(),

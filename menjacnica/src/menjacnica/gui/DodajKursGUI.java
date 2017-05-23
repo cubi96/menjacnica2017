@@ -1,8 +1,5 @@
 package menjacnica.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -25,6 +22,10 @@ import java.awt.Toolkit;
 
 public class DodajKursGUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2991956540365839619L;
 	private JPanel contentPane;
 	private JLabel lblSifra;
 	private JLabel lblNaziv;
@@ -196,10 +197,10 @@ public class DodajKursGUI extends JFrame {
 			valuta.setSrednji(Double.parseDouble(textFieldSrednjiKurs.getText()));
 			
 			// Dodavanje valute u kursnu listu
-			glavniProzor.sistem.dodajValutu(valuta);
+			GUIKontrolor.sistem.dodajValutu(valuta);
 
 			// Osvezavanje glavnog prozora
-			glavniProzor.prikaziSveValute();
+			GUIKontrolor.prikaziSveValute();
 			
 			//Zatvaranje DodajValutuGUI prozora
 			dispose();

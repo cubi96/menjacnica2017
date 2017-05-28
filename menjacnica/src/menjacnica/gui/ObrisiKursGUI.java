@@ -43,13 +43,13 @@ public class ObrisiKursGUI extends JFrame {
 	private JCheckBox chckbxZaistaObrisiKurs;
 	private JLabel label;
 	
-	private MenjacnicaGUI glavniProzor;
+
 	private Valuta valuta;
 
 	/**
 	 * Create the frame.
 	 */
-	public ObrisiKursGUI(MenjacnicaGUI glavniProzor, Valuta valuta) {
+	public ObrisiKursGUI( Valuta valuta) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ObrisiKursGUI.class.getResource("/icons/Screenshot.png")));
 		setResizable(false);
 		setTitle("Obrisi kurs");
@@ -75,9 +75,6 @@ public class ObrisiKursGUI extends JFrame {
 		contentPane.add(getLabel());
 		contentPane.add(getBtnDodaj());
 		contentPane.add(getBtnOdus());
-		
-		//podesavanje
-		this.glavniProzor = glavniProzor;
 		this.valuta = valuta;
 		
 		prikaziValutu();
@@ -228,14 +225,8 @@ public class ObrisiKursGUI extends JFrame {
 	}
 
 	private void obrisiValutu() {
-		try{
-			GUIKontrolor.sistem.obrisiValutu(valuta);
-			
-			GUIKontrolor.prikaziSveValute();
+		if(GUIKontrolor.obrisi(valuta)){
 			dispose();
-		} catch (Exception e1) {
-			JOptionPane.showMessageDialog(contentPane, e1.getMessage(),
-					"Greska", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }

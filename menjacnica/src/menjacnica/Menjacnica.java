@@ -1,11 +1,5 @@
 package menjacnica;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 
 import sistemskeOperacije.SODodajValutu;
@@ -40,7 +34,7 @@ public class Menjacnica implements MenjacnicaInterface {
 
 	@Override
 	public void ucitajIzFajla(String putanja) {
-		SOUcitajIzFajla.izvrsi(putanja, kursnaLista);
+		kursnaLista= SOUcitajIzFajla.izvrsi(putanja);
 	}
 
 	@Override

@@ -8,16 +8,16 @@ import java.util.LinkedList;
 import menjacnica.Valuta;
 
 public class SOUcitajIzFajla {
-	public static void izvrsi(String putanja, LinkedList<Valuta> kursnaLista) {
-		try{
-			ObjectInputStream in = new ObjectInputStream(
-					new BufferedInputStream(new FileInputStream(putanja)));
-			
-			kursnaLista = (LinkedList<Valuta>)(in.readObject());
-			
+	public static LinkedList<Valuta> izvrsi(String putanja) {
+		try {
+			ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(putanja)));
+
+			LinkedList<Valuta> lista = (LinkedList<Valuta>) (in.readObject());
 			in.close();
-		}catch(Exception e){
+			return lista;
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		
 	}
 }
